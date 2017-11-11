@@ -6,7 +6,7 @@ This is a fork of the [Infinite Red Boilerplate](https://github.com/infinitered/
 
 Currently includes:
 
-* React Native 0.47.2 (but you can change this if you want to experiment)
+* Expo React Native (https://github.com/expo/react-native/archive/sdk-22.0.2.tar.gz)
 * React Navigation
 * Redux
 * Redux Sagas
