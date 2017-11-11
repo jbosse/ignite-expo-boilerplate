@@ -1,6 +1,12 @@
 {
   "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
   "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
     "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean --force",
     "clean:android": "cd android/ && ./gradlew clean && cd .. && react-native run-android",
     "newclear": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build && rm -rf node_modules/ && npm cache clean --force && npm i",
@@ -21,6 +27,7 @@
     "git-hook": "npm test -s" */ %>
   },
   "dependencies": {
+    "expo": "^22.0.2",
     "apisauce": "^0.14.0",
     "format-json": "^1.0.3",
     "lodash": "^4.17.2",
@@ -45,6 +52,7 @@
     "enzyme": "^2.6.0",
     "mockery": "^2.0.0",
     "husky": "^0.13.1",
+    "jest-expo": "^22.0.0",
     "react-addons-test-utils": "~15.4.1",
     "react-dom": "16.0.0-alpha.12",
     "babel-plugin-ignite-ignore-reactotron": "^0.3.0",
@@ -64,7 +72,7 @@
     "setupFiles": [
       "./Tests/Setup"
     ],
-    "preset": "react-native"
+    "preset": "jest-expo"
   },
   "config": {}
 }
