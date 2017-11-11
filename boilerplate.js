@@ -41,7 +41,7 @@ async function install (context) {
 
   const name = parameters.third
   const spinner = print
-    .spin(`using the ${red('Infinite Red')} boilerplate v2 (code name 'Andross')`)
+    .spin(`using the ${red('Infinite Red')} boilerplate v2 (code name 'Andross') forked with Expo.io`)
     .succeed()
 
   // attempt to install React Native or die trying
@@ -151,6 +151,26 @@ async function install (context) {
     filesystem.write('package.json', newPackage, { jsonIndent: 2 })
   }
   await mergePackageJsons()
+
+  /**
+   * Merge the app.json from our template into the one provided from react-native init.
+   */
+  async function mergeAppJsons () {
+    // transform our app.json in case we need to replace variables
+    const rawJson = await template.generate({
+      directory: `${ignite.ignitePluginPath()}/boilerplate`,
+      template: 'app.json.ejs',
+      props: templateProps
+    })
+    const newAppJson = JSON.parse(rawJson)
+
+    // read in the react-native created package.json
+    const currentApp = filesystem.read('app.json', 'json')
+
+    // deep merge
+    const newApp = pipe(merge(__, newAppJson))(currentApp)
+  }
+  await mergeAppJsons()
 
   spinner.stop()
 
