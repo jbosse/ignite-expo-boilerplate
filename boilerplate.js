@@ -98,7 +98,6 @@ async function install (context) {
     name,
     igniteVersion: ignite.version,
     reactNativeVersion: rnInstall.version,
-    vectorIcons: answers['vector-icons'],
     animatable: answers['animatable'],
     i18n: answers['i18n']
   }
@@ -177,12 +176,6 @@ async function install (context) {
     // now run install of Ignite Plugins
     if (answers['dev-screens'] === 'Yes') {
       await system.spawn(`ignite add dev-screens@"~>2.2.0" ${debugFlag}`, {
-        stdio: 'inherit'
-      })
-    }
-
-    if (answers['vector-icons'] === 'react-native-vector-icons') {
-      await system.spawn(`ignite add vector-icons@"~>1.0.0" ${debugFlag}`, {
         stdio: 'inherit'
       })
     }
