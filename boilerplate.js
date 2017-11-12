@@ -169,6 +169,9 @@ async function install (context) {
 
     // deep merge
     const newApp = pipe(merge(__, newAppJson))(currentApp)
+
+    // write this out
+    filesystem.write('app.json', newApp, { jsonIndent: 2 })
   }
   await mergeAppJsons()
 
@@ -245,11 +248,11 @@ async function install (context) {
     To get started:
 
       cd ${name}
-      react-native run-ios
-      react-native run-android${androidInfo}
-      ignite --help
+      yarn start
 
     ${gray('Read the walkthrough at https://github.com/infinitered/ignite-ir-boilerplate/blob/master/readme.md#boilerplate-walkthrough')}
+
+    ${gray('Learn about working with Expo.io at https://docs.expo.io/versions/latest/index.html')}
 
     ${blue('Need additional help? Join our Slack community at http://community.infinite.red.')}
 
