@@ -9,12 +9,6 @@ const questions = [
     choices: ['No', 'Yes']
   },
   {
-    name: 'vector-icons',
-    message: 'What vector icon library will you use?',
-    type: 'list',
-    choices: ['none', 'react-native-vector-icons']
-  },
-  {
     name: 'i18n',
     message: 'What internationalization library will you use?',
     type: 'list',
@@ -33,7 +27,6 @@ const questions = [
  */
 const max = {
   'dev-screens': 'Yes',
-  'vector-icons': 'react-native-vector-icons',
   i18n: 'react-native-i18n',
   animatable: 'react-native-animatable'
 }
@@ -43,7 +36,6 @@ const max = {
  */
 const min = {
   'dev-screens': 'No',
-  'vector-icons': 'none',
   i18n: 'none',
   animatable: 'none'
 }

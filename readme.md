@@ -1,16 +1,12 @@
-# Ignite IR Boilerplate
+# Ignite Expo Boilerplate
 
-[![Build Status](https://semaphoreci.com/api/v1/ir/ignite-ir-boilerplate/branches/master/badge.svg)](https://semaphoreci.com/ir/ignite-ir-boilerplate)
+## Ignite IR Fork full of Expo.io Goodness
 
-
-
-## The latest and greatest boilerplate for Infinite Red opinions
-
-This is the boilerplate that [Infinite Red](https://infinite.red) uses as a way to test bleeding-edge changes to our React Native stack.
+This is a fork of the [Infinite Red Boilerplate](https://github.com/infinitered/ignite-ir-boilerplate) that has been modified to work with [Expo.io](https://docs.expo.io/versions/latest/index.html).
 
 Currently includes:
 
-* React Native 0.47.2 (but you can change this if you want to experiment)
+* Expo React Native (https://github.com/expo/react-native/archive/sdk-22.0.2.tar.gz)
 * React Navigation
 * Redux
 * Redux Sagas
@@ -21,25 +17,7 @@ Currently includes:
 When you've installed the [Ignite CLI](https://github.com/infinitered/ignite), you can get started with this boilerplate like this:
 
 ```
-ignite new MyLatestCreation
-```
-
-You can also change the React Native version, just keep in mind, we may not have tested this just yet.
-
-```sh
-ignite new MyLatestCreation --react-native-version 0.46.0-rc.2
-```
-
-By default we'll ask you some questions during install as to which features you'd like.  If you just want them all, you can skip the questions:
-
-```sh
-ignite new MyLatestCreation --max
-```
-
-If you want very few of these extras:
-
-```sh
-ignite new MyLatestCreation --min
+ignite new MyLatestCreation -b ignite-expo
 ```
 
 ## Boilerplate walkthrough
@@ -125,11 +103,3 @@ Helpers for transforming data between API and your application and vice versa. A
 ### Tests
 
 This folder (located as a sibling to `App`) contains sample Jest snapshot and unit tests for your application.
-
-**Previous Boilerplates**
-
-* [2016 aka Ignite 1.0](https://github.com/infinitered/ignite-ir-boilerplate-2016)
-
-## Premium Support
-
-[Ignite CLI](https://infinite.red/ignite) and [Ignite IR Boilerplate](https://github.com/infinitered/ignite-ir-boilerplate), as open source projects, are free to use and always will be. [Infinite Red](https://infinite.red/) offers premium Ignite CLI support and general mobile app design/development services. Email us at [hello@infinite.red](mailto:hello@infinite.red) to get in touch with us for more details.

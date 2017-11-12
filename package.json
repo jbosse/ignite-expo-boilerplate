@@ -1,10 +1,10 @@
 {
-  "name": "ignite-ir-boilerplate",
-  "description": "Infinite Red's hot boilerplate for React Native.",
+  "name": "ignite-expo",
+  "description": "Infinite Red's hot boilerplate for React Native, now with Expo.io!",
   "license": "MIT",
-  "repository": "infinitered/ignite-ir-boilerplate",
-  "homepage": "https://github.com/infinitered/ignite-ir-boilerplate",
-  "version": "2.2.2",
+  "repository": "jbosse/ignite-expo-boilerplate",
+  "homepage": "https://github.com/jbosseignite-expo-boilerplate",
+  "version": "0.0.3",
   "files": [
     "boilerplate",
     "commands",
@@ -18,9 +18,9 @@
     "screenExamples.js"
   ],
   "author": {
-    "name": "Infinite Red",
-    "email": "npm@infinite.red",
-    "url": "https://github.com/infinitered/ignite-ir-boilerplate"
+    "name": "Jimmy Bosse",
+    "email": "jimmy@jobostudios.net",
+    "url": "https://github.com/jbosse/ignite-expo-boilerplate"
   },
   "scripts": {
     "lint": "standard",

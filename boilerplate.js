@@ -41,7 +41,7 @@ async function install (context) {
 
   const name = parameters.third
   const spinner = print
-    .spin(`using the ${red('Infinite Red')} boilerplate v2 (code name 'Andross')`)
+    .spin(`using the ${red('Infinite Red')} boilerplate v2 (code name 'Andross') forked with Expo.io`)
     .succeed()
 
   // attempt to install React Native or die trying
@@ -98,7 +98,6 @@ async function install (context) {
     name,
     igniteVersion: ignite.version,
     reactNativeVersion: rnInstall.version,
-    vectorIcons: answers['vector-icons'],
     animatable: answers['animatable'],
     i18n: answers['i18n']
   }
@@ -153,6 +152,29 @@ async function install (context) {
   }
   await mergePackageJsons()
 
+  /**
+   * Merge the app.json from our template into the one provided from react-native init.
+   */
+  async function mergeAppJsons () {
+    // transform our app.json in case we need to replace variables
+    const rawJson = await template.generate({
+      directory: `${ignite.ignitePluginPath()}/boilerplate`,
+      template: 'app.json.ejs',
+      props: templateProps
+    })
+    const newAppJson = JSON.parse(rawJson)
+
+    // read in the react-native created package.json
+    const currentApp = filesystem.read('app.json', 'json')
+
+    // deep merge
+    const newApp = pipe(merge(__, newAppJson))(currentApp)
+
+    // write this out
+    filesystem.write('app.json', newApp, { jsonIndent: 2 })
+  }
+  await mergeAppJsons()
+
   spinner.stop()
 
   // react native link -- must use spawn & stdio: ignore or it hangs!! :(
@@ -170,19 +192,13 @@ async function install (context) {
   try {
     // boilerplate adds itself to get plugin.js/generators etc
     // Could be directory, npm@version, or just npm name.  Default to passed in values
-    const boilerplate = parameters.options.b || parameters.options.boilerplate || 'ignite-ir-boilerplate'
+    const boilerplate = parameters.options.b || parameters.options.boilerplate || 'ignite-expo-boilerplate'
 
     await system.spawn(`ignite add ${boilerplate} ${debugFlag}`, { stdio: 'inherit' })
 
     // now run install of Ignite Plugins
     if (answers['dev-screens'] === 'Yes') {
-      await system.spawn(`ignite add dev-screens@"~>2.2.0" ${debugFlag}`, {
-        stdio: 'inherit'
-      })
-    }
-
-    if (answers['vector-icons'] === 'react-native-vector-icons') {
-      await system.spawn(`ignite add vector-icons@"~>1.0.0" ${debugFlag}`, {
+      await system.spawn(`ignite add dev-screens-expo ${debugFlag}`, {
         stdio: 'inherit'
       })
     }
@@ -232,11 +248,11 @@ async function install (context) {
     To get started:
 
       cd ${name}
-      react-native run-ios
-      react-native run-android${androidInfo}
-      ignite --help
+      yarn start
 
     ${gray('Read the walkthrough at https://github.com/infinitered/ignite-ir-boilerplate/blob/master/readme.md#boilerplate-walkthrough')}
+
+    ${gray('Learn about working with Expo.io at https://docs.expo.io/versions/latest/index.html')}
 
     ${blue('Need additional help? Join our Slack community at http://community.infinite.red.')}
 
