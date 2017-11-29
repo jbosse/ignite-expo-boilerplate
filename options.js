@@ -19,6 +19,12 @@ const questions = [
     message: 'What animation library will you use?',
     type: 'list',
     choices: ['none', 'react-native-animatable']
+  },
+  {
+    name: 'redux-persist',
+    message: 'Would you like to include redux-persist?',
+    type: 'list',
+    choices: ['No', 'Yes']
   }
 ]
 
@@ -28,7 +34,8 @@ const questions = [
 const max = {
   'dev-screens': 'Yes',
   i18n: 'react-native-i18n',
-  animatable: 'react-native-animatable'
+  animatable: 'react-native-animatable',
+  'redux-persist': 'Yes'
 }
 
 /**
@@ -37,7 +44,8 @@ const max = {
 const min = {
   'dev-screens': 'No',
   i18n: 'none',
-  animatable: 'none'
+  animatable: 'none',
+  'redux-persist': 'No'
 }
 
 module.exports = {

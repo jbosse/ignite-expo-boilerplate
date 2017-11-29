@@ -112,8 +112,7 @@ async function install (context) {
   // https://github.com/facebook/react-native/issues/12724
   filesystem.appendAsync('.gitattributes', '*.bat text eol=crlf')
   filesystem.append('.gitignore', '\n# Misc\n#')
-  filesystem.append('.gitignore', '\n.env.example\n')
-  filesystem.append('.gitignore', '.env\n')
+  filesystem.append('.gitignore', '\n.env\n')
 
   /**
    * Merge the package.json from our template into the one provided from react-native init.
@@ -209,6 +208,12 @@ async function install (context) {
 
     if (answers['animatable'] === 'react-native-animatable') {
       await system.spawn(`ignite add animatable@"~>1.0.0" ${debugFlag}`, {
+        stdio: 'inherit'
+      })
+    }
+
+    if (answers['redux-persist'] === 'Yes') {
+      await system.spawn(`ignite add redux-persist@"~>0.0.7" ${debugFlag}`, {
         stdio: 'inherit'
       })
     }
