@@ -1,8 +1,8 @@
 import { Platform } from 'react-native';
 
 const type = {
-  base: (Platform.OS === 'ios' ? 'Helvetica Neue' : 'sans-serif'),
-  bold: (Platform.OS === 'ios' ? 'HelveticaNeue-Bold' : 'sans-serif-condensed'),
+  base: (Platform.OS === 'ios' ? 'Avenir-Book' : 'sans-serif'),
+  bold: (Platform.OS === 'ios' ? 'Avenir-Black' : 'sans-serif-condensed'),
   emphasis: (Platform.OS === 'ios' ? 'HelveticaNeue-Italic' : 'sans-serif')
 }
 
@@ -53,6 +53,11 @@ const style = {
     fontFamily: type.base,
     fontSize: size.medium
   }
+}
+
+if (Platform.OS !== 'ios') {
+  style.h3.textStyle = 'italic'
+  style.h6.textStyle = 'italic'
 }
 
 export default {
