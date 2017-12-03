@@ -56,8 +56,8 @@ const style = {
 }
 
 if (Platform.OS !== 'ios') {
-  style.h3.textStyle = 'italic'
-  style.h6.textStyle = 'italic'
+  style.h3.fontStyle = 'italic'
+  style.h6.fontStyle = 'italic'
 }
 
 export default {
