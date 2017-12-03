@@ -1,7 +1,7 @@
 const type = {
-  base: (Platform.OS === 'ios' ? 'Helvetica Neue' : 'sans-serif'),
-  bold: (Platform.OS === 'ios' ? 'HelveticaNeue-Bold' : 'sans-serif-condensed'),
-  emphasis: (Platform.OS === 'ios' ? 'HelveticaNeue-Italic' : 'sans-serif')
+  base: (Expo.Constants.platform.OS === 'ios' ? 'Helvetica Neue' : 'sans-serif'),
+  bold: (Expo.Constants.platform.OS === 'ios' ? 'HelveticaNeue-Bold' : 'sans-serif-condensed'),
+  emphasis: (Expo.Constants.platform.OS === 'ios' ? 'HelveticaNeue-Italic' : 'sans-serif')
 }
 
 const size = {
