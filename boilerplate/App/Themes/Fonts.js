@@ -1,7 +1,9 @@
+import { Platform } from 'react-native';
+
 const type = {
-  base: (Expo.Constants.platform === 'ios' ? 'Helvetica Neue' : 'sans-serif'),
-  bold: (Expo.Constants.platform  === 'ios' ? 'HelveticaNeue-Bold' : 'sans-serif-condensed'),
-  emphasis: (Expo.Constants.platform === 'ios' ? 'HelveticaNeue-Italic' : 'sans-serif')
+  base: (Platform.OS === 'ios' ? 'Helvetica Neue' : 'sans-serif'),
+  bold: (Platform.OS === 'ios' ? 'HelveticaNeue-Bold' : 'sans-serif-condensed'),
+  emphasis: (Platform.OS === 'ios' ? 'HelveticaNeue-Italic' : 'sans-serif')
 }
 
 const size = {
