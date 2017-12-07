@@ -1,4 +1,4 @@
-import { Platform } from 'react-native';
+import { Platform } from 'react-native'
 
 const type = {
   base: (Platform.OS === 'ios' ? 'Avenir-Book' : 'sans-serif'),
