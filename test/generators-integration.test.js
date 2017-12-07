@@ -31,7 +31,7 @@ describe('generators', () => {
   })
 
   test('generates a component', async () => {
-    const simpleComponent = 'SimpleComponent'
+    const simpleComponent = 'Simple'
     await execa(IGNITE, ['g', 'component', simpleComponent], { preferLocal: false })
     expect(jetpack.exists(`App/Components/${simpleComponent}.js`)).toBe('file')
     expect(jetpack.exists(`App/Components/Styles/${simpleComponent}Style.js`)).toBe('file')
@@ -40,20 +40,28 @@ describe('generators', () => {
   })
 
   test('generates a folder component', async () => {
-    const folderComponent = 'FolderComponent'
+    const folderComponent = 'Folder'
     await execa(IGNITE, ['g', 'component', '--folder', folderComponent], { preferLocal: false })
     expect(jetpack.exists(`App/Components/${folderComponent}/index.js`)).toBe('file')
-    expect(jetpack.exists(`App/Components/${folderComponent}/Styles/${folderComponent}Style.js`)).toBe('file')
+    expect(jetpack.exists(`App/Components/${folderComponent}/Styles/indexStyle.js`)).toBe('file')
     const lint = await execa('npm', ['-s', 'run', 'lint'])
     expect(lint.stderr).toBe('')
   })
 
   test('generates a component inside a folder', async () => {
-    const componentName = 'InComponent'
-    const folderName = 'FolderComponent'
+    const componentName = 'InFolder'
+    const folderName = 'Folder'
     await execa(IGNITE, ['g', 'component', '--folder', folderName, componentName], { preferLocal: false })
     expect(jetpack.exists(`App/Components/${folderName}/${componentName}.js`)).toBe('file')
     expect(jetpack.exists(`App/Components/${folderName}/Styles/${componentName}Style.js`)).toBe('file')
+    const lint = await execa('npm', ['-s', 'run', 'lint'])
+    expect(lint.stderr).toBe('')
+  })
+
+  test('generates a component in a relative path', async() => {
+    await execa(IGNITE, ['g', 'component', 'My/SubFolder/Test'], { preferLocal: false })
+    expect(jetpack.exists('App/Components/My/SubFolder/Test.js')).toBe('file')
+    expect(jetpack.exists('App/Components/My/SubFolder/Styles/TestStyle.js')).toBe('file')
     const lint = await execa('npm', ['-s', 'run', 'lint'])
     expect(lint.stderr).toBe('')
   })
