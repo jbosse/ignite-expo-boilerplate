@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/andypike/rectify/badges/gpa.svg)]
+[![Code Climate](https://codeclimate.com/github/jbosse/ignite-expo-boilerplate/badges/gpa.svg)]
 
 # Ignite Expo Boilerplate
 
