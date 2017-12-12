@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/andypike/rectify/badges/gpa.svg)]
+
 # Ignite Expo Boilerplate
 
 ## Ignite IR Fork full of Expo.io Goodness
