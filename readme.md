@@ -1,4 +1,5 @@
-![Maintainability](https://api.codeclimate.com/v1/badges/9b673e2d752791ec2dff/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9b673e2d752791ec2dff/maintainability)](https://codeclimate.com/github/jbosse/ignite-expo-boilerplate/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9b673e2d752791ec2dff/test_coverage)](https://codeclimate.com/github/jbosse/ignite-expo-boilerplate/test_coverage)
 
 # Ignite Expo Boilerplate
 
