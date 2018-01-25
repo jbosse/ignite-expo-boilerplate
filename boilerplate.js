@@ -3,22 +3,6 @@ const { merge, pipe, assoc, omit, __ } = require('ramda')
 const { getReactNativeVersion } = require('./lib/react-native-version')
 
 /**
- * Is Android installed?
- *
- * $ANDROID_HOME/tools folder has to exist.
- *
- * @param {*} context - The gluegun context.
- * @returns {boolean}
- */
-const isAndroidInstalled = function (context) {
-  const androidHome = process.env['ANDROID_HOME']
-  const hasAndroidEnv = !context.strings.isBlank(androidHome)
-  const hasAndroid = hasAndroidEnv && context.filesystem.exists(`${androidHome}/tools`) === 'dir'
-
-  return Boolean(hasAndroid)
-}
-
-/**
  * Let's install.
  *
  * @param {any} context - The gluegun context.
@@ -243,9 +227,6 @@ async function install (context) {
 
   const perfDuration = parseInt(((new Date()).getTime() - perfStart) / 10) / 100
   spinner.succeed(`ignited ${yellow(name)} in ${perfDuration}s`)
-
-  const androidInfo = isAndroidInstalled(context) ? ''
-    : `\n\nTo run in Android, make sure you've followed the latest react-native setup instructions at https://facebook.github.io/react-native/docs/getting-started.html before using ignite.\nYou won't be able to run ${bold('react-native run-android')} successfully until you have.`
 
   const successMessage = `
     ${red('Ignite CLI')} ignited ${yellow(name)} in ${gray(`${perfDuration}s`)}
