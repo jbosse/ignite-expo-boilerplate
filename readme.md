@@ -65,7 +65,13 @@ To generate a new Component you can use the following generator commands:
 
 ### Storybook
 
-[Storybook](https://storybook.js.org/) has been setup to show off components in the different states. Storybook is a great way to develop and test components outside of use in your app. Simply run `npm run storybook` to get started. All stores are contained in the `*.story.js` files along side the components.
+[Storybook](https://storybook.js.org/) has been setup to show off components in the different states. Storybook is a great way to develop and test components outside of use in your app. To get started:
+
+* Set `launchStorybook: __DEV__` inside `App/Config/DebugConfig.js`
+* Run `yarn run storybook`
+* In a separate terminal, run `yarn run ios` or `yarn run android`
+
+All stories are contained in the `*.story.js` files along side the components.
 
 ### Themes
 
