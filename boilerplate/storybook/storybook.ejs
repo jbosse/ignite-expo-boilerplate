@@ -11,7 +11,7 @@ configure(() => {
 const StorybookUI = getStorybookUI({ port: 7007, onDeviceUI: true })
 
 class StorybookUIRoot extends Component {
-  render() {
+  render () {
     return <StorybookUI />
   }
 }

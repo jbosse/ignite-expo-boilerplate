@@ -1,6 +1,5 @@
 import './App/Config/ReactotronConfig'
 import Expo from 'expo'
-import App from './App/Containers/App'
 import DebugConfig from './App/Config/DebugConfig'
 
 const Entrypoint =
@@ -9,4 +8,3 @@ const Entrypoint =
     : require('./App/Containers/App').default
 
 Expo.registerRootComponent(Entrypoint)
-
