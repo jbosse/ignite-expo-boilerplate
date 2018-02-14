@@ -1,5 +1,12 @@
 import './App/Config/ReactotronConfig'
 import Expo from 'expo'
 import App from './App/Containers/App'
+import DebugConfig from './App/Config/DebugConfig'
 
-Expo.registerRootComponent(App)
+const Entrypoint =
+  __DEV__ && DebugConfig.launchStorybook
+    ? require('./storybook').default
+    : require('./App/Containers/App').default
+
+Expo.registerRootComponent(Entrypoint)
+
