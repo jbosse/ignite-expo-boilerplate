@@ -202,12 +202,11 @@ async function install (context) {
       })
     }
 
-    // TODO: Add Airbnb
-    // if (parameters.options.lint !== 'false') {
-    //   await system.spawn(`ignite add standard@"~>1.0.0" ${debugFlag}`, {
-    //     stdio: 'inherit'
-    //   })
-    // }
+    if (parameters.options.lint !== 'false') {
+      await system.spawn(`ignite add standard@"~>1.0.0" ${debugFlag}`, {
+        stdio: 'inherit'
+      })
+    }
   } catch (e) {
     ignite.log(e)
     throw e
