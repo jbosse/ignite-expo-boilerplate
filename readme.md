@@ -9,7 +9,7 @@ This is a fork of the [Infinite Red Boilerplate](https://github.com/infinitered/
 
 Currently includes:
 
-* Expo React Native (https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz)
+* Expo React Native (https://github.com/expo/react-native/archive/sdk-26.0.0.tar.gz)
 * React Navigation
 * Redux
 * Redux Sagas
@@ -34,7 +34,6 @@ Containers are (mostly) full screens, although they can be sections of screens o
 * `App.js` - your main application. We create a Redux store and configure it here
 * `RootContainer.js` - main view of your application. Contains your status bar and navigation component
 * `LaunchScreen.js` - this is the first screen shown in your application. It's loaded into the Navigation component
-* `LoginScreen.js` - an example login screen. Read the comments in there to learn more!
 * `Styles` - styling for each of the above containers and screens
 
 To generate a new Container or Screen you can use the following generator commands:
