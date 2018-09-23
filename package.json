@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": "jbosse/ignite-expo-boilerplate",
   "homepage": "https://github.com/jbosseignite-expo-boilerplate",
-  "version": "0.26.0-alpha",
+  "version": "0.30.0",
   "files": [
     "boilerplate",
     "commands",
