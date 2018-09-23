@@ -34,3 +34,31 @@ If you have to bypass lint for a special commit that you will come back and clea
 **Understanding Linting Errors**
 
 The linting rules are from JS Standard and React-Standard.  [Regular JS errors can be found with descriptions here](http://eslint.org/docs/rules/), while [React errors and descriptions can be found here](https://github.com/yannickcr/eslint-plugin-react).
+
+## Using this Boilerplate
+
+`ignite { new, n } ProjectName -b ../path/to/ignite-expo-boilerplate`
+
+`ignite { new, n } ProjectName -b ignite-expo-boilerplate`
+
+## Optional: Adding ignite-dev-screens-expo
+
+If developing locally:
+`cp -r ../path/to/ignite-dev-screens-expo ./node_modules/`
+`ignite add ./node_modules/ignite-dev-screens-expo`
+
+Otherwise during the boilerplate setup it'll ask if you want to add *dev-screens*, select yes and it'll download https://www.npmjs.com/package/ignite-dev-screens-expo from NPM.
+
+## Optional: Adding Generators
+
+Not particularly intuitive, but to add generators having added the expo boilerplate, you need `ignite add` expo-boilerplate again.
+
+If developing locally:
+`cp -r ../path/to/ignite-expo-boilerplate ./node_modules/`
+`ignite add ./node_modules/ignite-expo-boilerplate`
+
+Otherwise
+
+`ignite add ignite-expo-boilerplate`
+
+Should be able to then `ignite { generate, g } { component, container, list, listview, redux, saga, screen }`
