@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
-    "fs-jetpack": "^1.0.0",
+    "fs-jetpack": "^2.2.0",
     "jest": "^23.6.0",
     "np": "^2.15.0",
     "sinon": "^7.1.1",
