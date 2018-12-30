@@ -1,3 +1,15 @@
+# ARCHIVED
+
+I am currently working on Nativescript Vue applications because we are using Vue for our web interfaces in my day job. As a result, the only time I see the repository is when an issue is opened and it takes time I don't currently have to keep up with what is going on with both React and Ignite. 
+
+As a result I am archiving this repo.
+
+If you are here because you want to use Expo with React and Ignite, please look a the first few commits to this repo in the commit history. It is really easy to initialize your app with the default Ignite boilerplate and make the changes necessary to use the Expo fork of React Native.
+
+If you are an active Ignite/React Native/Expo user and would like to maintain this repository, please send me an email and I will gladly transfer this repo to you and figure out how to transfer the npm publish rights as well.
+
+---
+
 [![Build Status](https://semaphoreci.com/api/v1/jbosse/ignite-expo-boilerplate/branches/master/badge.svg)](https://semaphoreci.com/jbosse/ignite-expo-boilerplate)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9b673e2d752791ec2dff/maintainability)](https://codeclimate.com/github/jbosse/ignite-expo-boilerplate/maintainability)
 
